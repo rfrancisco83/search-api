@@ -8,7 +8,7 @@ import com.rf.searchapi.model.JokeResultList;
 @Service("jokeService")
 public class JokeServiceImpl implements JokeService {
 	
-	@Value("{api.joke.base}")
+	@Value("${api.joke.base}")
 	private String apiBase;
 	
 
