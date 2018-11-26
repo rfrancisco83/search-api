@@ -1,23 +1,24 @@
 package com.rf.searchapi.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.rf.searchapi.model.JokeResult;
+import com.rf.searchapi.model.JokeResultList;
+import com.rf.searchapi.service.JokeService;
 
 @RestController
 public class JokeController {
 	
+	@Autowired
+	JokeService jokeService;
+	
+	@CrossOrigin(origins = "http://localhost:3000")
 	@RequestMapping("/jokes")
-	public JokeResult getJokes(@RequestParam(required=false) String firstName, 
-			@RequestParam(required=false) String lastName) {
+	public JokeResultList getJokes() {
 		
-		JokeResult result = new JokeResult();
-		
-		
-		return result;
-		
+		return jokeService.getJokes();
 	}
 
 }

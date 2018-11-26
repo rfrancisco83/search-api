@@ -1,9 +1,9 @@
 package com.rf.searchapi.service;
 
-import com.rf.searchapi.model.JokeResult;
+import com.rf.searchapi.model.JokeResultList;
 
 public interface JokeService {
 	
-	public JokeResult getJokes(String firstName, String lastName);
+	public JokeResultList getJokes();
 
 }
